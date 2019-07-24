@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import { Button, Input, Select, notification } from 'antd';
 import './App.css';
+import logo from './blue_white_gorizontal.svg';
 import FacebookLogin from './components/FacebookLogin';
 import SafeFetch from './fetch';
 
@@ -70,7 +71,7 @@ class App extends React.Component {
     return (
         <div className="App">
           <header className="App-header">
-            <img src="/logo.png" className="App-logo" alt="logo" />
+            <img src={logo} className="App-logo" alt="logo" />
             <div style={{ minHeight: 150 }}>
               <div
                   className="App-link"
