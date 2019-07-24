@@ -1,8 +1,8 @@
 {
-  "name": "kotik",
+  "name": "stage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://leelooai.github.io/kotik",
+  "homepage": "https://leelooai.github.io/stage",
   "dependencies": {
     "antd": "^3.20.5",
     "gh-pages": "^2.0.1",
