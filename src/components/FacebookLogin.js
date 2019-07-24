@@ -28,20 +28,20 @@ export default class FacebookLogin extends React.Component {
             fjs.parentNode.insertBefore(js, fjs);
         })(document, 'script', 'facebook-jssdk');
         window.fbAsyncInit = function() {
-            FB.init({
-                appId: SERVER_PARAMS.FACEBOOK_APP_ID,
+            window.FB.init({
+                appId: window.SERVER_PARAMS.FACEBOOK_APP_ID,
                 cookie: true, // enable cookies to allow the server to access the session
                 xfbml: true, // parse social plugins on this page
                 version: 'v3.1', // use version 3.1
             });
-            FB.AppEvents.logPageView();
-            FB.getLoginStatus(function(response) {
+            window.FB.AppEvents.logPageView();
+            window.FB.getLoginStatus(function(response) {
                 self.statusChangeCallback(response);
             });
-            FB.Event.subscribe('auth.login', self.statusChangeCallback);
-            FB.Event.subscribe('auth.logout', self.statusChangeCallback);
+            window.FB.Event.subscribe('auth.login', self.statusChangeCallback);
+            window.FB.Event.subscribe('auth.logout', self.statusChangeCallback);
             self.fbLoginButton.onclick = () =>
-                FB.login(self.statusChangeCallback, {
+                window.FB.login(self.statusChangeCallback, {
                     scope: fbPermissions,
                 });
         };
@@ -51,7 +51,7 @@ export default class FacebookLogin extends React.Component {
     }
     statusChangeCallback = res => {
         if (res.status === 'connected') {
-            FB.api(`/${res.authResponse.userID}/permissions`, response => {
+            window.FB.api(`/${res.authResponse.userID}/permissions`, response => {
                 if (
                     response &&
                     !response.error &&

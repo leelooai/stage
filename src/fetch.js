@@ -49,7 +49,7 @@ const notify = {
 const allowedMethods = ['get', 'post', 'put', 'delete'];
 const allowedFormMethods = ['post', 'put'];
 
-export default function fetch(rawMethod = '', url = '', data = {}, stringify = false) {
+function fetch(rawMethod = '', url = '', data = {}, stringify = false) {
     const method = String(rawMethod).toLowerCase();
     const exec = request[method];
     if(!_.includes(allowedMethods, method)) {
