@@ -19,8 +19,9 @@ const fetchFbPages = async ({ loggedIn, token }, onFetch) => {
 };
 
 
-class App {
-  constructor() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       loggedIn: false,
       token: '',
@@ -36,11 +37,8 @@ class App {
             <p>
               Edit <code>src/App.js</code> and save to reload.
             </p>
-            <a
+            <div
                 className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
             >
               <FacebookLogin
                   requiredPermissions={REQUIRED_FB_PERMISSIONS}
@@ -52,7 +50,7 @@ class App {
                     fetchFbPages({ loggedIn, token }, pages => this.setState({ pages }));
                   }}
               />
-            </a>
+            </div>
           </header>
         </div>
     );
