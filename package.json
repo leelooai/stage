@@ -1,8 +1,8 @@
 {
-  "name": "get_fb_tokens",
+  "name": "kotik",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://landrew31.github.io/get_fb_tokens",
+  "homepage": "https://leelooai.github.io/kotik",
   "dependencies": {
     "antd": "^3.20.5",
     "gh-pages": "^2.0.1",
