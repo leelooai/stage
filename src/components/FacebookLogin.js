@@ -62,7 +62,7 @@ export default class FacebookLogin extends React.Component {
                 }
             });
         } else {
-            if(this.props.onLogin) this.props.onLogin(false, res.authResponse.accessToken);
+            if(this.props.onLogin && res.authResponse) this.props.onLogin(false, res.authResponse.accessToken);
             this.props.logoutFunction();
         }
     };

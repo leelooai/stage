@@ -23,3 +23,102 @@ code {
 .h-margin-0 {
   margin: 0;
 }
+.h-disabled {
+  opacity: .6;
+  pointer-events: none;
+}
+.my-fb-login-button {
+  font-size: 12px;
+  background: #4682d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  margin: 10px 0px 0px 20px;
+  text-align: center;
+  padding: 0 10px 0px 10px;
+  color: white;
+  font-weight: 400;
+  transition: .2s ease-in-out;
+  border-radius: 2px;
+  cursor: pointer;
+  z-index: 111;
+}
+.fb-button-text {
+  white-space: nowrap;
+  opacity: 0;
+  animation: fadeAndScale .5s ease-in-out forwards;
+}
+.logged {
+  opacity: 0;
+  white-space: nowrap;
+  position: relative;
+  animation: fadeAndScaleLogged .5s ease-in-out forwards;
+}
+.loggin {
+  opacity: 0;
+  white-space: nowrap;
+  position: relative;
+  animation: fadeAndScaleLogin .5s ease-in-out forwards;
+}
+.facebook-button-animation.active {
+  opacity: 0;
+  position: relative;
+  animation: mainAnimation .4s ease-in-out forwards;
+}
+.facebook-button-animation.disabled {
+  opacity: 0;
+  position: relative;
+  animation: mainExitAnimation .4s ease-in-out forwards;
+}
+
+@keyframes fadeAndScale {
+  from {
+    opacity: 0;
+    transform: scale(.6, .6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+@keyframes fadeAndScaleLogged {
+  from {
+    opacity: 0;
+    left: -30px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes fadeAndScaleLogin {
+  from {
+    opacity: 0;
+    left: 30px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes mainAnimation {
+  from {
+    opacity: 0;
+    top: -40px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+@keyframes mainExitAnimation {
+  from {
+    opacity: 1;
+    top: 0px;
+  }
+  to {
+    opacity: 0;
+    top: -40px;
+  }
+}
