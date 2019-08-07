@@ -107,29 +107,34 @@ class App extends React.Component {
                 ) : null}
               </div>
               <div>
-                {this.state.selectedPage ? (
-                    <Input.Group compact>
-                      <Button
-                          ghost
-                          onClick={() => copyToClipboard(this.state.selectedPage.id)}
-                      >
-                        Copy bot ID
-                      </Button>
-                      <Button
-                          ghost
-                          onClick={() => copyToClipboard(this.state.selectedPage.name)}
-                      >
-                        Copy bot Name
-                      </Button>
-
-                      <Button
-                          ghost
-                          onClick={() => copyToClipboard(this.state.selectedPage.access_token)}
-                      >
-                        Copy bot Access Token
-                      </Button>
-                    </Input.Group>
-                ) : null}
+                  {this.state.selectedPage ? (
+                      <Input.Group compact>
+                          <Button
+                              ghost
+                              onClick={() => copyToClipboard(this.state.selectedPage.access_token)}
+                          >
+                              Copy bot Access Token
+                          </Button>
+                          <Button
+                              ghost
+                              onClick={() => copyToClipboard(this.state.selectedPage.id)}
+                          >
+                              Copy bot ID
+                          </Button>
+                          <Button
+                              ghost
+                              onClick={() => copyToClipboard(this.state.selectedPage.name)}
+                          >
+                              Copy bot Name
+                          </Button>
+                          <Button
+                              ghost
+                              onClick={() => copyToClipboard(this.state.token)}
+                          >
+                              Copy FB user token
+                          </Button>
+                      </Input.Group>
+                  ) : null}
               </div>
             </div>
           </header>
